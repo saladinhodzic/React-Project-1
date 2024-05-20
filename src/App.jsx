@@ -6,7 +6,13 @@ import MySentence from "./MySentence";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [arr, setArr] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
+  const reverseArr = () => {
+    const newArr = [...arr];
+    newArr.reverse();
+    setArr(newArr);
+  };
   // const osoba = {
   //   name: "Jakub",
   //   age: 17,
@@ -32,9 +38,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <p>{count}</p>
+        <button onClick={() => setCount(count - 1)}>decrease</button>
+        <button onClick={() => setCount(count + 1)}>increase</button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
@@ -42,9 +48,15 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <MySentence />
-      <MySentence />
-      <MySentence />
+      <button onClick={() => reverseArr()}>Zameni redosled</button>
+      {arr.map((value, index) => {
+        return (
+          <div key={index}>
+            <p>{value}</p>
+            <MySentence />
+          </div>
+        );
+      })}
     </>
   );
 }
