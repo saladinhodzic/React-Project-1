@@ -14,6 +14,12 @@ function App() {
     newArr.reverse();
     setArr(newArr);
   };
+
+  const time = () => {
+    const nesto = setInterval(() => {
+      timer - 1;
+    }, 1000);
+  };
   // const osoba = {
   //   name: "Jakub",
   //   age: 17,
@@ -39,7 +45,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <h1 className="timer">{timer - 1}</h1>
+        <h1 className="timer">{() => time()}</h1>
         <p>{count}</p>
         <button onClick={() => setCount(count - 1)}>decrease</button>
         <button onClick={() => setCount(count + 1)}>increase</button>
