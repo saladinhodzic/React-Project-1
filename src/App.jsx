@@ -7,6 +7,7 @@ import MySentence from "./MySentence";
 function App() {
   const [count, setCount] = useState(0);
   const [arr, setArr] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  const [timer, setTimer] = useState(60);
 
   const reverseArr = () => {
     const newArr = [...arr];
@@ -38,6 +39,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <h1 className="timer">{timer - 1}</h1>
         <p>{count}</p>
         <button onClick={() => setCount(count - 1)}>decrease</button>
         <button onClick={() => setCount(count + 1)}>increase</button>
