@@ -1,24 +1,23 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import MySentence from "./MySentence";
+import MySentence from "./components/MySentence/MySentence";
+import { Greetings } from "./components/Greetings/Greetings";
 
 // timer(50);
 // console.log(timer(time));
 
+// const timer = (time) => {
+//   let interval;
+//   interval = setInterval(() => {
+//     time--;
+//     console.log(time);
+//   }, 1000);
+// };
 function App() {
   const [count, setCount] = useState(0);
   const [arr, setArr] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  // const [timer, setTimer] = useState(60);
+  // const [seconds, setTimer] = useState(60);
 
-  function timer(time) {
-    let interval;
-    interval = setInterval(() => {
-      time = time - 1;
-      console.log(time);
-    }, 1000);
-  }
   const reverseArr = () => {
     const newArr = [...arr];
     newArr.reverse();
@@ -40,17 +39,9 @@ function App() {
   return (
     // React fragment
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <Greetings appName="Sakiley" name="Saladin" />
       <div className="card">
-        <h1 className="timer">{() => timer(50)}</h1>
+        {/* <h1 className="timer">{timer(seconds)}</h1> */}
         <p>{count}</p>
         <button onClick={() => setCount(count - 1)}>decrease</button>
         <button onClick={() => setCount(count + 1)}>increase</button>
