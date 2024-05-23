@@ -1,4 +1,5 @@
 import "./Card.css";
+import info from "../../assets/info.svg";
 export function Card(props) {
   return (
     <div className="card">

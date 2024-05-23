@@ -37,12 +37,14 @@ function App() {
   // setCount((prevValue) => prevValue++); NIJE KOREKTNO
 
   return (
-    <Card
-      slika={hotel}
-      hotelName="Grand Ho Tram"
-      country="Vietnam"
-      price={179}
-    />
+    <>
+      <Card
+        slika={hotel}
+        hotelName="Grand Ho Tram"
+        country="Vietnam"
+        price={179}
+      />
+    </>
     // <Greetings appName="Sakiley" name="Saladin" />
     // React fragment
     // <>
