@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+img {
+  width: 350px;
+  height: 50%;
+  border-radius: 1em;
+}
+
+.tekst {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.ime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: #4267b2;
+  color: #fff;
+  margin-top: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}

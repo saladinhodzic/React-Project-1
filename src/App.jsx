@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import MySentence from "./components/MySentence/MySentence";
-import { Greetings } from "./components/Greetings/Greetings";
+import { Card } from "./components/Card/Card";
+import hotel from "./assets/hotel.jpg";
 
 // timer(50);
 // console.log(timer(time));
@@ -37,7 +37,13 @@ function App() {
   // setCount((prevValue) => prevValue++); NIJE KOREKTNO
 
   return (
-    <Greetings appName="Sakiley" name="Saladin" />
+    <Card
+      slika={hotel}
+      hotelName="Grand Ho Tram"
+      country="Vietnam"
+      price={179}
+    />
+    // <Greetings appName="Sakiley" name="Saladin" />
     // React fragment
     // <>
     //   <div className="card">
