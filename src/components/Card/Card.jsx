@@ -1,5 +1,5 @@
 import "./Card.css";
-import info from "../../assets/info.svg";
+import infoLogo from "../../assets/info.svg";
 export function Card(props) {
   return (
     <div className="card">
@@ -13,7 +13,10 @@ export function Card(props) {
           <p>{props.country}</p>
         </div>
         <div className="price">
-          <h2>${props.price}</h2>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.25em" }}>
+            <h2>${props.price}</h2>
+            <img src={infoLogo} className="info-logo" />
+          </div>
           <p>per night</p>
         </div>
         <div className="button">Member Price available</div>
