@@ -9,27 +9,30 @@
 
 .card {
   height: 500px;
-  display: flex;
+  width: 350px;
+  /* display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; */
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1em;
 }
 
 h2 {
   font-size: 1.75em;
 }
+
 img {
-  width: 350px;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   border-radius: 1em;
 }
 
 .tekst {
-  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 1em;
 }
 
 .ime {
@@ -42,7 +45,6 @@ img {
   padding: 5px 10px;
   background-color: #4267b2;
   color: #fff;
-  margin-top: 1em;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -58,6 +60,6 @@ img {
 }
 
 .info-logo {
-  width: 3em;
+  width: 2em;
   cursor: pointer;
 }

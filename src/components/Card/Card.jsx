@@ -3,10 +3,12 @@ import infoLogo from "../../assets/info.svg";
 export function Card(props) {
   return (
     <div className="card">
-      <img src={props.slika} />
+      <div className="img">
+        <img src={props.slika} />
+      </div>
       <div className="tekst">
         <p>
-          <strong>9.3/10</strong> Exceptional (425 reviews)
+          <strong>{props.score}/10</strong> Exceptional (425 reviews)
         </p>
         <div className="ime">
           <h2>{props.hotelName}</h2>
