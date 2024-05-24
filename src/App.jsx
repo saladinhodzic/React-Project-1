@@ -45,6 +45,7 @@ function App() {
         country="Vietnam"
         price={179}
         score={9.3}
+        reviews={425}
       />
       <Card
         slika={hotel2}
@@ -52,6 +53,7 @@ function App() {
         country="Philipines"
         price={59}
         score={8.5}
+        reviews={365}
       />
     </div>
     // <Greetings appName="Sakiley" name="Saladin" />
