@@ -3,6 +3,8 @@ import "./App.css";
 import { Card } from "./components/Card/Card";
 import hotel from "./assets/hotel.jpg";
 import hotel2 from "./assets/hotel2.jpg";
+import hotel3 from "./assets/hotel3.jpg";
+import hotel4 from "./assets/hotel4.jpg";
 
 // timer(50);
 // console.log(timer(time));
@@ -54,6 +56,15 @@ function App() {
         price={59}
         score={8.5}
         reviews={365}
+      />
+
+      <Card
+        slika={hotel4}
+        hotelName="Titanic Ship"
+        country="Sweden"
+        price={169}
+        score={7.9}
+        reviews={2008}
       />
     </div>
     // <Greetings appName="Sakiley" name="Saladin" />
