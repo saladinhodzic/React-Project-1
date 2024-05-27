@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  width: 100%;
+  height: 20vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  flex-grow: 1fr;
+}
+
+.listing {
+  display: flex;
+  gap: 1em;
+  flex-grow: 9fr;
+}
+
+.listing ul {
+  display: flex;
+  gap: 1em;
+  list-style: none;
+  padding-top: 0.5em;
+}
+
+.listing ul li {
+  cursor: pointer;
+}
