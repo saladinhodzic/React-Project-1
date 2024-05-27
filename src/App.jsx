@@ -2,9 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { Card } from "./components/Card/Card";
 import hotel from "./assets/hotel.jpg";
-import hotel2 from "./assets/hotel2.jpg";
-import hotel3 from "./assets/hotel3.jpg";
-import hotel4 from "./assets/hotel4.jpg";
+import hotels from "./common/hotels.json";
 
 // timer(50);
 // console.log(timer(time));
@@ -53,43 +51,23 @@ function App() {
         score={9.3}
         reviews={425}
       />
-      <Card
-        slika={hotel2}
-        hotelName="Margaritaville"
-        country="Philipines"
-        price={
-          <>
-            $99 <del>$159</del>
-          </>
-        }
-        score={8.5}
-        reviews={365}
-      />
-      <Card
-        slika={hotel2}
-        hotelName="Margaritaville"
-        country="Philipines"
-        price={
-          <>
-            $99 <del>$159</del>
-          </>
-        }
-        score={8.5}
-        reviews={365}
-      />
-
-      <Card
-        slika={hotel4}
-        hotelName="Titanic Ship"
-        country="Sweden"
-        price={
-          <>
-            $179 <del>$369</del>
-          </>
-        }
-        score={7.9}
-        reviews={2008}
-      />
+      {hotels.map((value) => {
+        return (
+          <Card
+            key={value["id"]}
+            slika={value["imageUrl"]}
+            hotelName={value["title"]}
+            country={value["content"]}
+            price={
+              <>
+                ${value["total"]} <del>$569</del>
+              </>
+            }
+            score={9.3}
+            reviews={425}
+          />
+        );
+      })}
     </div>
     // <Greetings appName="Sakiley" name="Saladin" />
     // React fragment
