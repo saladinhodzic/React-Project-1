@@ -63,7 +63,7 @@ function App() {
                 ${value["total"]} <del>$569</del>
               </>
             }
-            score={9.3}
+            score={value["rating"]}
             reviews={425}
           />
         );

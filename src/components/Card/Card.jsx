@@ -8,8 +8,7 @@ export function Card(props) {
       </div>
       <div className="tekst">
         <p>
-          <strong>{props.score}/10</strong> Exceptional ({props.reviews}{" "}
-          reviews)
+          <strong>{props.score}</strong> Exceptional ({props.reviews} reviews)
         </p>
         <div className="ime">
           <h2>{props.hotelName}</h2>
