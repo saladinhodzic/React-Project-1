@@ -47,11 +47,23 @@ function App() {
         country="Vietnam"
         price={
           <>
-            $259 <del>$559</del>
+            $259 <del>$569</del>
           </>
         }
         score={9.3}
         reviews={425}
+      />
+      <Card
+        slika={hotel2}
+        hotelName="Margaritaville"
+        country="Philipines"
+        price={
+          <>
+            $99 <del>$159</del>
+          </>
+        }
+        score={8.5}
+        reviews={365}
       />
       <Card
         slika={hotel2}
