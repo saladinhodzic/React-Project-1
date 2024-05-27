@@ -4,7 +4,7 @@ export function Card(props) {
   return (
     <div className="card">
       <div className="img">
-        <img src={props.slika} />
+        <img src={props?.slika} />
       </div>
       <div className="tekst">
         <p>
@@ -17,7 +17,7 @@ export function Card(props) {
         </div>
         <div className="price">
           <div style={{ display: "flex", alignItems: "center", gap: "0.25em" }}>
-            <h2>${props.price}</h2>
+            <h2>{props?.price}</h2>
             <img src={infoLogo} className="info-logo" />
           </div>
           <p>per night</p>

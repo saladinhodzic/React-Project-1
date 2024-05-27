@@ -45,7 +45,11 @@ function App() {
         slika={hotel}
         hotelName="Grand Ho Tram"
         country="Vietnam"
-        price={179}
+        price={
+          <>
+            $259 <del>$559</del>
+          </>
+        }
         score={9.3}
         reviews={425}
       />
@@ -53,7 +57,11 @@ function App() {
         slika={hotel2}
         hotelName="Margaritaville"
         country="Philipines"
-        price={59}
+        price={
+          <>
+            $99 <del>$159</del>
+          </>
+        }
         score={8.5}
         reviews={365}
       />
@@ -62,7 +70,11 @@ function App() {
         slika={hotel4}
         hotelName="Titanic Ship"
         country="Sweden"
-        price={169}
+        price={
+          <>
+            $179 <del>$369</del>
+          </>
+        }
         score={7.9}
         reviews={2008}
       />
