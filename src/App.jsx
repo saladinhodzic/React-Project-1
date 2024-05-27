@@ -45,7 +45,7 @@ function App() {
         country="Vietnam"
         price={
           <>
-            $259 <del>$569</del>
+            $259 <del style={{ fontSize: "0.75em" }}>$569</del>
           </>
         }
         score={9.3}
@@ -60,7 +60,7 @@ function App() {
             country={value["content"]}
             price={
               <>
-                ${value["total"]} <del>$569</del>
+                ${value["total"]} <del style={{ fontSize: "0.75em" }}>$569</del>
               </>
             }
             score={value["rating"]}
