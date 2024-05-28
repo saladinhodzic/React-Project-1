@@ -4,6 +4,7 @@ import { Card } from "./components/Card/Card";
 import hotel from "./assets/hotel.jpg";
 import hotels from "./common/hotels.json";
 import { Navbar } from "./components/Navbar/Navbar";
+import { Naslov } from "./components/Naslov/Naslov";
 
 // timer(50);
 // console.log(timer(time));
@@ -41,6 +42,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Naslov title="Catalog" />
       <div className="katalog">
         <Card
           slika={hotel}
