@@ -8,7 +8,7 @@ export function Navbar() {
         </div>
         <div className="listing">
           <ul>
-            <li>Contact</li>
+            <li>Catalog</li>
             <li>Your list</li>
             <li>Hotels & Motels</li>
             <li>Apartmens</li>
