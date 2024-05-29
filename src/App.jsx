@@ -5,6 +5,7 @@ import hotel from "./assets/hotel.jpg";
 import hotels from "./common/hotels.json";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Naslov } from "./components/Naslov/Naslov";
+import { Footer } from "./components/Footer/Footer";
 
 // timer(50);
 // console.log(timer(time));
@@ -75,6 +76,7 @@ function App() {
           );
         })}
       </div>
+      <Footer />
     </>
 
     // <Greetings appName="Sakiley" name="Saladin" />
