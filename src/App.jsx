@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Naslov title="Catalog" />
+      <Naslov title="Catalog" id="#catalog" />
       <div className="katalog">
         <Card
           slika={hotel}
