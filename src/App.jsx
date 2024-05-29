@@ -6,6 +6,7 @@ import hotels from "./common/hotels.json";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Naslov } from "./components/Naslov/Naslov";
 import { Footer } from "./components/Footer/Footer";
+import { Routes, Route } from "react-router-dom";
 
 // timer(50);
 // console.log(timer(time));
@@ -43,39 +44,45 @@ function App() {
   return (
     <>
       <Navbar />
-      <Naslov title="Catalog" id="#catalog" />
-      <div className="katalog">
-        <Card
-          slika={hotel}
-          hotelName="Grand Ho Tram"
-          country="Vietnam"
-          price={
-            <>
-              $259 <del style={{ fontSize: "0.75em" }}>$569</del>
-            </>
-          }
-          score={9.3}
-          reviews={425}
-        />
-        {hotels.map((value) => {
-          return (
-            <Card
-              key={value["id"]}
-              slika={value["imageUrl"]}
-              hotelName={value["title"]}
-              country={value["content"]}
-              price={
-                <>
-                  ${value["total"]}{" "}
-                  <del style={{ fontSize: "0.75em" }}>$569</del>
-                </>
-              }
-              score={value["rating"]}
-              reviews={425}
-            />
-          );
-        })}
-      </div>
+      <main>
+        {/* <Naslov title="Catalog" id="#catalog" /> */}
+        {/* <div className="katalog">
+          <Card
+            slika={hotel}
+            hotelName="Grand Ho Tram"
+            country="Vietnam"
+            price={
+              <>
+                $259 <del style={{ fontSize: "0.75em" }}>$569</del>
+              </>
+            }
+            score={9.3}
+            reviews={425}
+          />
+          {hotels.map((value) => {
+            return (
+              <Card
+                key={value["id"]}
+                slika={value["imageUrl"]}
+                hotelName={value["title"]}
+                country={value["content"]}
+                price={
+                  <>
+                    ${value["total"]}{" "}
+                    <del style={{ fontSize: "0.75em" }}>$569</del>
+                  </>
+                }
+                score={value["rating"]}
+                reviews={425}
+              />
+            );
+          })}
+        </div> */}
+
+        <Routes>
+          <Route path="/" element={<p>Pocetna stranica</p>} />
+        </Routes>
+      </main>
       <Footer />
     </>
 
