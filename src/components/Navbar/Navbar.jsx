@@ -6,12 +6,7 @@ export function Navbar() {
     <header>
       <div className="wrapper">
         <div className="logo">
-          <NavLink
-            to={"/"}
-            className={({ isActive }) =>
-              isActive ? "navlink-active" : "navlink"
-            }
-          >
+          <NavLink to={""} className={"navlink"}>
             <h1>SAKIley</h1>
           </NavLink>
         </div>

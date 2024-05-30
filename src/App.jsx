@@ -6,6 +6,7 @@ import { Naslov } from "./components/Naslov/Naslov";
 import { Footer } from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import { Catalog } from "./pages/Hotels/Hotels";
+import { NewNavbar } from "./pages/Hotels/NewNavbar";
 
 // timer(50);
 // console.log(timer(time));
@@ -42,7 +43,6 @@ function App() {
 
   return (
     <>
-      <Navbar />
       <main>
         {/* <Naslov title="Catalog" id="#catalog" /> */}
         {/* <div className="katalog">
@@ -77,14 +77,29 @@ function App() {
             );
           })}
         </div> */}
-        <div className="hotels">
+        <div className="nesto">
           <Routes>
-            <Route path="/" />
-            <Route path="/hotels" element={<Catalog />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Navbar />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/hotels"
+              element={
+                <>
+                  <NewNavbar />
+                  <Catalog />
+                </>
+              }
+            />
           </Routes>
         </div>
       </main>
-      <Footer />
     </>
 
     // <Greetings appName="Sakiley" name="Saladin" />
