@@ -6,7 +6,7 @@ import { Naslov } from "./components/Naslov/Naslov";
 import { Footer } from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import { Catalog } from "./pages/Hotels/Hotels";
-import { NewNavbar } from "./pages/Hotels/NewNavbar";
+import { NewNavbar } from "./components/NewNavbar/NewNavbar";
 
 // timer(50);
 // console.log(timer(time));
@@ -43,7 +43,7 @@ function App() {
 
   return (
     <>
-      <main>
+      <main className="main">
         {/* <Naslov title="Catalog" id="#catalog" /> */}
         {/* <div className="katalog">
           <Card
@@ -77,7 +77,7 @@ function App() {
             );
           })}
         </div> */}
-        <div className="nesto">
+        <div className="hotels">
           <Routes>
             <Route
               path="/"
@@ -88,15 +88,7 @@ function App() {
                 </>
               }
             />
-            <Route
-              path="/hotels"
-              element={
-                <>
-                  <NewNavbar />
-                  <Catalog />
-                </>
-              }
-            />
+            <Route path="/hotels" element={<Catalog />} />
           </Routes>
         </div>
       </main>
