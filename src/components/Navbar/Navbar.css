@@ -66,3 +66,18 @@ header {
 .listing ul li:hover::after {
   transform: scaleX(1);
 }
+
+.navlink {
+  color: #fff;
+}
+
+.navlink:hover {
+  color: #ff863f;
+}
+
+.navlink-active {
+  color: #ff863f;
+}
+.navlink-active:hover {
+  color: #fff;
+}

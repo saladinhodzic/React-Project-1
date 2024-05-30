@@ -1,12 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import { Card } from "./components/Card/Card";
 import hotel from "./assets/hotel.jpg";
-import hotels from "./common/hotels.json";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Naslov } from "./components/Naslov/Naslov";
 import { Footer } from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
+import { Catalog } from "./pages/Hotels/Hotels";
 
 // timer(50);
 // console.log(timer(time));
@@ -78,10 +77,12 @@ function App() {
             );
           })}
         </div> */}
-
-        <Routes>
-          <Route path="/" element={<p>Pocetna stranica</p>} />
-        </Routes>
+        <div className="hotels">
+          <Routes>
+            <Route path="/" />
+            <Route path="/hotels" element={<Catalog />} />
+          </Routes>
+        </div>
       </main>
       <Footer />
     </>
