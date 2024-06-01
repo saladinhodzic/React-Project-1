@@ -1,4 +1,5 @@
 import "./Card.css";
+import { FaHotel } from "react-icons/fa";
 export function Card(props) {
   return (
     <div className="card">
@@ -17,7 +18,10 @@ export function Card(props) {
           <h2>{props?.price}</h2>
           <p style={{ textAlign: "start" }}>per night</p>
         </div>
-        <div className="button">Member Price available</div>
+        <button className="show-hotel" onClick={props.onclick}>
+          <FaHotel className="icon" />
+          <p>Show hotel</p>
+        </button>
       </div>
     </div>
   );

@@ -58,3 +58,9 @@ p {
 .button:hover {
   background-color: #2a4170;
 }
+
+.show-hotel {
+  display: flex;
+  gap: 0.5em;
+  padding: 8px 10px;
+}
