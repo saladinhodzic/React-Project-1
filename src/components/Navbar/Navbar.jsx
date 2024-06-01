@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
-export function Navbar() {
+export function Navbar(props) {
   return (
     <header>
       <div className="wrapper">
@@ -47,10 +47,13 @@ export function Navbar() {
           </ul>
           <button>Log in</button>
         </div>
-        <div className="slogan">
-          <h1>Find your next stay</h1>
-          <h2>Search lowest prices on hotels, motels and so much more...</h2>
-        </div>
+
+        {props.show ? (
+          <div className="slogan">
+            <h1>Find your next stay</h1>
+            <h2>Search lowest prices on hotels, motels and so much more...</h2>
+          </div>
+        ) : null}
       </div>
     </header>
   );

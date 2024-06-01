@@ -23,6 +23,7 @@ export function Catalog() {
               }
               score={value["rating"]}
               reviews={425}
+              onclick={() => (window.location.href = `/hotels/${value.id}`)}
             />
           );
         })}

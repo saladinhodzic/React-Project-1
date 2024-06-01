@@ -83,7 +83,7 @@ function App() {
               path="/"
               element={
                 <>
-                  <Navbar />
+                  <Navbar show={false} />
                   <Footer />
                 </>
               }
