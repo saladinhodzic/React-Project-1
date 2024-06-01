@@ -19,10 +19,30 @@ export function NewNavbar() {
           >
             <li>Catalog</li>
           </NavLink>
-          <li>Your list</li>
-          <li>Hotels & Motels</li>
-          <li>Apartmens</li>
-          <li>About us</li>
+          <NavLink
+            to={"/list"}
+            className={({ isActive }) =>
+              isActive ? "navlink-active" : "navlink"
+            }
+          >
+            <li>Your list</li>
+          </NavLink>
+          <NavLink
+            to={"/apartmens"}
+            className={({ isActive }) =>
+              isActive ? "navlink-active" : "navlink"
+            }
+          >
+            <li>Apartmens</li>
+          </NavLink>
+          <NavLink
+            to={"/about-us"}
+            className={({ isActive }) =>
+              isActive ? "navlink-active" : "navlink"
+            }
+          >
+            <li>About us</li>
+          </NavLink>
         </ul>
         <button>Log in</button>
       </div>
