@@ -4,6 +4,7 @@ import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import "./Hotels.css";
 
 export function Catalog() {
+  // const { id } = useParams();
   return (
     <div className="hotels-cards">
       <NewNavbar />

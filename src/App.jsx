@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import { Catalog } from "./pages/Hotels/Hotels";
 import { NewNavbar } from "./components/NewNavbar/NewNavbar";
+import { ShowHotel } from "./pages/Hotels/ShowHotel/ShowHotel";
 
 // timer(50);
 // console.log(timer(time));
@@ -89,6 +90,7 @@ function App() {
               }
             />
             <Route path="/hotels" element={<Catalog />} />
+            <Route path="/hotels/:id" element={<ShowHotel />} />
           </Routes>
         </div>
       </main>
