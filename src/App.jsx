@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import { Catalog } from "./pages/Hotels/Hotels";
 import { NewNavbar } from "./components/NewNavbar/NewNavbar";
 import { ShowHotel } from "./pages/Hotels/ShowHotel/ShowHotel";
+import Home from "./pages/Hotels/Home/Home";
 
 // timer(50);
 // console.log(timer(time));
@@ -80,15 +81,7 @@ function App() {
         </div> */}
         <div className="hotels">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Navbar show={true} />
-                  <Footer />
-                </>
-              }
-            />
+            <Route path="/" element={<Home />} />
             <Route path="/hotels" element={<Catalog />} />
             <Route path="/hotels/:id" element={<ShowHotel />} />
           </Routes>
