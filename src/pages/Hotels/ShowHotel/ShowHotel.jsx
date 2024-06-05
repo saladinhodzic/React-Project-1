@@ -8,7 +8,8 @@ import "./ShowHotel.css";
 export function ShowHotel() {
   const { id } = useParams();
 
-  const hotel = Hotels.at(+id - 1);
+  // const hotel = Hotels.at(+id - 1);
+  const hotel = Hotels.find((hotel) => hotel.id === Number(id));
 
   return (
     <>
