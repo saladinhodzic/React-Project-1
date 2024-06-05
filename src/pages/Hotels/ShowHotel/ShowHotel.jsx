@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import Hotels from "../../../common/hotels.json";
 import { NewNavbar } from "../../../components/NewNavbar/NewNavbar";
-import { FaMapMarkerAlt, FaSwimmer } from "react-icons/fa";
-import { CiHeart } from "react-icons/ci";
+import { FaMapMarkerAlt, FaSwimmer, FaWifi, FaSpa } from "react-icons/fa";
+import { CiHeart, CiLock, CiParking1 } from "react-icons/ci";
 import "./ShowHotel.css";
 
 export function ShowHotel() {
@@ -34,17 +34,29 @@ export function ShowHotel() {
             </h2>
             <ul>
               <li className="li">
-                <FaSwimmer className="icon" />
+                <FaSwimmer className="icons" />
                 Swimming pool
               </li>
-              <li>Wi-Fi</li>
-              <li>Locks on Card</li>
-              <li>Free Parking</li>
-              <li>Spa & Wellness</li>
+              <li className="li">
+                <FaWifi className="icons" />
+                Wi-Fi
+              </li>
+              <li className="li">
+                <CiLock className="icons" />
+                Locks on Card
+              </li>
+              <li className="li">
+                <CiParking1 className="icons" />
+                Free Parking
+              </li>
+              <li className="li">
+                <FaSpa className="icons" />
+                Spa & Wellness
+              </li>
             </ul>
             <div style={{ display: "flex" }}>
               <button>Reserve</button>
-              <CiHeart className="icon" />
+              <CiHeart className="icons" />
             </div>
           </div>
         </div>
