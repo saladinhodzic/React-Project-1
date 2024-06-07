@@ -9,6 +9,7 @@ import { Catalog } from "./pages/Hotels/Hotels";
 import { NewNavbar } from "./components/NewNavbar/NewNavbar";
 import { ShowHotel } from "./pages/Hotels/ShowHotel/ShowHotel";
 import Home from "./pages/Hotels/Home/Home";
+import Teams from "./pages/Hotels/Teams/Teams";
 
 // timer(50);
 // console.log(timer(time));
@@ -84,6 +85,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/hotels" element={<Catalog />} />
             <Route path="/hotels/:id" element={<ShowHotel />} />
+            <Route path="/teams" element={<Teams />} />
           </Routes>
         </div>
       </main>
