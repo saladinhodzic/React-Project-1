@@ -43,6 +43,14 @@ export function NewNavbar() {
           >
             <li>About us</li>
           </NavLink>
+          <NavLink
+            to={"/teams"}
+            className={({ isActive }) =>
+              isActive ? "navlink-active" : "navlink"
+            }
+          >
+            <li>Teams</li>
+          </NavLink>
         </ul>
         <button>Log in</button>
       </div>
