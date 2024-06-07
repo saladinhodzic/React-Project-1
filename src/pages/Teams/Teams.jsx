@@ -2,7 +2,7 @@ import { TeamCard } from "../../components/TeamCard/TeamCard";
 import teams from "../../common/teams.json";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import "./Teams.css";
-console.log(teams);
+
 export default function Teams() {
   return (
     <>
