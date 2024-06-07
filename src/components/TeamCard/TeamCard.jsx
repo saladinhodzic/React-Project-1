@@ -2,6 +2,11 @@ import "./TeamCard.css";
 import { useState } from "react";
 export function TeamCard(props) {
   const [showMore, setShowMore] = useState(false);
+
+  useEffect(() => {
+    if (showMore) {
+    }
+  }, [showMore]);
   return (
     <div className="team-card" style={{ height: showMore ? "150px" : "80px" }}>
       <h2 className="h2">{props.name}</h2>
