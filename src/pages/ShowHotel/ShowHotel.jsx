@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import Hotels from "../../../common/hotels.json";
-import { NewNavbar } from "../../../components/NewNavbar/NewNavbar";
+import Hotels from "../../common/hotels.json";
+import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import { FaMapMarkerAlt, FaSwimmer, FaWifi, FaSpa } from "react-icons/fa";
 import { CiHeart, CiLock, CiParking1 } from "react-icons/ci";
 import "./ShowHotel.css";

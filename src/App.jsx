@@ -7,9 +7,9 @@ import { Footer } from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import { Catalog } from "./pages/Hotels/Hotels";
 import { NewNavbar } from "./components/NewNavbar/NewNavbar";
-import { ShowHotel } from "./pages/Hotels/ShowHotel/ShowHotel";
-import Home from "./pages/Hotels/Home/Home";
-import Teams from "./pages/Hotels/Teams/Teams";
+import { ShowHotel } from "./pages/ShowHotel/ShowHotel";
+import Home from "./pages/Home/Home";
+import Teams from "./pages/Teams/Teams";
 
 // timer(50);
 // console.log(timer(time));
