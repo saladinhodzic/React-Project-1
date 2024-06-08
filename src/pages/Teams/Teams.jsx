@@ -8,9 +8,10 @@ export default function Teams() {
     <>
       <NewNavbar />
       <div className="list">
-        {teams.map((value) => {
+        {teams.map((value, index) => {
           return (
             <TeamCard
+              key={index}
               name={value["team_name"]}
               points={`${value["points"]}pts`}
               wins={value.wins}

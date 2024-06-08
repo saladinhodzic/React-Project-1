@@ -1,5 +1,5 @@
 import "./TeamCard.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export function TeamCard(props) {
   const [showMore, setShowMore] = useState(false);
 
