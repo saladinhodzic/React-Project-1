@@ -1,14 +1,17 @@
 import { TeamCard } from "../../components/TeamCard/TeamCard";
 import teams from "../../common/teams.json";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
+import { useState, useEffect } from "react";
 import "./Teams.css";
 
 export default function Teams() {
+  const [list, setList] = useState(teams);
+
   return (
     <>
       <NewNavbar />
       <div className="list">
-        {teams.map((value, index) => {
+        {list.map((value, index) => {
           return (
             <TeamCard
               key={index}
@@ -18,6 +21,7 @@ export default function Teams() {
               loses={value.loses}
               draws={value.draws}
               matches={value.matches_played}
+              onclick={() => console.log(teams)}
             />
           );
         })}

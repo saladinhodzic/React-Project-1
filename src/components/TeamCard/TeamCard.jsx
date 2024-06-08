@@ -1,12 +1,10 @@
 import "./TeamCard.css";
 import { useState, useEffect } from "react";
+import teams from "../../common/teams.json";
 export function TeamCard(props) {
   const [showMore, setShowMore] = useState(false);
+  // const [isClicked, setIsClicked] = useState(false);
 
-  useEffect(() => {
-    if (showMore) {
-    }
-  }, [showMore]);
   return (
     <div className="team-card" style={{ height: showMore ? "150px" : "80px" }}>
       <h2 className="h2">{props.name}</h2>
@@ -14,6 +12,9 @@ export function TeamCard(props) {
       <p className="p">{props.matches}</p>
       <p className="p">{props.wins}</p>
       <p className="p">{props.draws}</p>
+      <p className="p" style={{ cursor: "pointer" }} onClick={props.onclick}>
+        Remove
+      </p>
       <p className="p">
         <button onClick={() => setShowMore(!showMore)} className="show">
           {showMore ? "Show less" : "Show more"}
