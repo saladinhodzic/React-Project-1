@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import teams from "../../common/teams.json";
 export function TeamCard(props) {
   const [showMore, setShowMore] = useState(false);
+
   // const [isClicked, setIsClicked] = useState(false);
 
   return (

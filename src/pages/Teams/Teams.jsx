@@ -6,6 +6,13 @@ import "./Teams.css";
 
 export default function Teams() {
   const [list, setList] = useState(teams);
+  const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    if (isClicked) {
+      setList(list.slice(0, 1));
+    }
+  }, [isClicked]);
 
   return (
     <>
@@ -21,7 +28,7 @@ export default function Teams() {
               loses={value.loses}
               draws={value.draws}
               matches={value.matches_played}
-              onclick={() => console.log(teams)}
+              onclick={() => setIsClicked(true)}
             />
           );
         })}
