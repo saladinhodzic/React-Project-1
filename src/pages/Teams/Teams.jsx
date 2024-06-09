@@ -8,11 +8,15 @@ export default function Teams() {
   const [list, setList] = useState(teams);
   const [isClicked, setIsClicked] = useState(false);
 
-  useEffect(() => {
-    if (isClicked) {
-      setList(list.slice(0, 1));
-    }
-  }, [isClicked]);
+  // useEffect(() => {
+  //   if (isClicked) {
+  //     setList(list.filter((value) => isClicked));
+  //   }
+  // }, [isClicked]);
+  function removeItem(i) {
+    const newList = list.filter((value, index) => index !== i);
+    setList(newList);
+  }
 
   return (
     <>
@@ -28,7 +32,7 @@ export default function Teams() {
               loses={value.loses}
               draws={value.draws}
               matches={value.matches_played}
-              onclick={() => setIsClicked(true)}
+              onclick={() => removeItem(index)}
             />
           );
         })}
