@@ -10,9 +10,11 @@ export default function Teams() {
 
   // useEffect(() => {
   //   if (isClicked) {
-  //     setList(list.filter((value) => isClicked));
+  //     const newList = list.filter((value, index) => value.onClick === false);
+  //     setList(newList);
   //   }
   // }, [isClicked]);
+
   function removeItem(i) {
     const newList = list.filter((value, index) => index !== i);
     setList(newList);
@@ -33,6 +35,7 @@ export default function Teams() {
               draws={value.draws}
               matches={value.matches_played}
               onclick={() => removeItem(index)}
+              // onclick={() => index}
             />
           );
         })}
