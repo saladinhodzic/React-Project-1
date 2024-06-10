@@ -13,8 +13,8 @@ export function TeamCard(props) {
       <p className="p">{props.matches}</p>
       <p className="p">{props.wins}</p>
       <p className="p">{props.draws}</p>
-      <p className="p" style={{ cursor: "pointer" }} onClick={props.onclick}>
-        Remove
+      <p className="p">
+        <button onClick={props.onclick}>Remove</button>
       </p>
       <p className="p">
         <button onClick={() => setShowMore(!showMore)} className="show">

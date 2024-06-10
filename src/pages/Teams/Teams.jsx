@@ -20,6 +20,13 @@ export default function Teams() {
     setList(newList);
   }
 
+  useEffect(() => {
+    teams.map((value) => {
+      value.id = Math.random(0, 1);
+    });
+  }, []);
+  console.log(teams);
+
   return (
     <>
       <NewNavbar />
