@@ -2,6 +2,7 @@ import hotels from "../../common/hotels.json";
 import { Card } from "../../components/Card/Card";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import "./Hotels.css";
+import { niz } from "../ShowHotel/ShowHotel";
 
 export function Catalog() {
   // const { id } = useParams();

@@ -10,6 +10,7 @@ import { NewNavbar } from "./components/NewNavbar/NewNavbar";
 import { ShowHotel } from "./pages/ShowHotel/ShowHotel";
 import Home from "./pages/Home/Home";
 import Teams from "./pages/Teams/Teams";
+import { MyList } from "./pages/MyList/MyList";
 
 // timer(50);
 // console.log(timer(time));
@@ -86,6 +87,7 @@ function App() {
             <Route path="/hotels" element={<Catalog />} />
             <Route path="/hotels/:id" element={<ShowHotel />} />
             <Route path="/teams" element={<Teams />} />
+            <Route path="/list" element={<MyList />} />
           </Routes>
         </div>
       </main>

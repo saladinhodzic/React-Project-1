@@ -12,12 +12,15 @@ import {
 import { CiHeart, CiLock, CiParking1 } from "react-icons/ci";
 import "./ShowHotel.css";
 
+export const niz = [];
+
 export function ShowHotel() {
   const { id } = useParams();
   const [isActive, setIsActive] = useState(false);
 
   // const hotel = Hotels.at(+id - 1);
   const hotel = Hotels.find((hotel) => hotel.id === Number(id));
+  niz.push(hotel);
 
   return (
     <>
