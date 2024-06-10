@@ -1,12 +1,20 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import Hotels from "../../common/hotels.json";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
-import { FaMapMarkerAlt, FaSwimmer, FaWifi, FaSpa } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaSwimmer,
+  FaWifi,
+  FaSpa,
+  FaHeart,
+} from "react-icons/fa";
 import { CiHeart, CiLock, CiParking1 } from "react-icons/ci";
 import "./ShowHotel.css";
 
 export function ShowHotel() {
   const { id } = useParams();
+  const [isActive, setIsActive] = useState(false);
 
   // const hotel = Hotels.at(+id - 1);
   const hotel = Hotels.find((hotel) => hotel.id === Number(id));
@@ -55,9 +63,19 @@ export function ShowHotel() {
                 Spa & Wellness
               </li>
             </ul>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1em" }}>
               <button>Reserve</button>
-              <CiHeart className="icons" />
+              {!isActive ? (
+                <CiHeart
+                  className="heart"
+                  onClick={() => setIsActive(!isActive)}
+                />
+              ) : (
+                <FaHeart
+                  className="heart"
+                  onClick={() => setIsActive(!isActive)}
+                />
+              )}
             </div>
           </div>
         </div>
