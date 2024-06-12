@@ -25,7 +25,6 @@ export default function Teams() {
       value.id = Math.random(0, 1);
     });
   }, []);
-  console.log(teams);
 
   return (
     <>
