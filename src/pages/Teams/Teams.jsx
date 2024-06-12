@@ -7,6 +7,7 @@ import "./Teams.css";
 export default function Teams() {
   const [list, setList] = useState(teams);
   const [isClicked, setIsClicked] = useState(false);
+  const [extended, setExtended] = useState(null);
 
   // useEffect(() => {
   //   if (isClicked) {
@@ -34,6 +35,7 @@ export default function Teams() {
           return (
             <TeamCard
               key={index}
+              id={teams.id}
               name={value["team_name"]}
               points={`${value["points"]}pts`}
               wins={value.wins}
@@ -41,6 +43,8 @@ export default function Teams() {
               draws={value.draws}
               matches={value.matches_played}
               onclick={() => removeItem(index)}
+              extended={extended}
+              setExtended={setExtended}
               // onclick={() => index}
             />
           );
@@ -49,3 +53,5 @@ export default function Teams() {
     </>
   );
 }
+
+// code . - za prebacivanje u vscode

@@ -1,27 +1,50 @@
 import "./TeamCard.css";
 import { useState, useEffect } from "react";
-import teams from "../../common/teams.json";
-export function TeamCard(props) {
-  const [showMore, setShowMore] = useState(false);
+export function TeamCard({
+  name,
+  id,
+  points,
+  extended,
+  setExtended,
+  onclick,
+  wins,
+  draws,
+  matches,
+}) {
+  const [closed, setClosed] = useState(true);
+
+  useEffect(() => {
+    if (extended !== null && extended !== id) {
+      setClosed(true);
+    }
+  }, [extended, id]);
+
+  useEffect(() => {
+    if (!closed) {
+      setExtended(id);
+    } else {
+      setExtended(null);
+    }
+  }, [closed, id]);
 
   // const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div className="team-card" style={{ height: showMore ? "150px" : "80px" }}>
-      <h2 className="h2">{props.name}</h2>
-      <p className="p">{props.points}</p>
-      <p className="p">{props.matches}</p>
-      <p className="p">{props.wins}</p>
-      <p className="p">{props.draws}</p>
+    <div className="team-card" style={{ height: !closed ? "150px" : "80px" }}>
+      <h2 className="h2">{name}</h2>
+      <p className="p">{points}</p>
+      <p className="p">{matches}</p>
+      <p className="p">{wins}</p>
+      <p className="p">{draws}</p>
       <p className="p">
-        <button onClick={props.onclick}>Remove</button>
+        <button onClick={onclick}>Remove</button>
       </p>
       <p className="p">
-        <button onClick={() => setShowMore(!showMore)} className="show">
-          {showMore ? "Show less" : "Show more"}
+        <button onClick={() => setClosed(!closed)} className="show">
+          {!closed ? "Show less" : "Show more"}
         </button>
       </p>
-      {/* {showMore ? (
+      {/* {closed ? (
         <p className="p text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
           eveniet, sequi consectetur doloribus dicta eos! Iste obcaecati alias
@@ -32,7 +55,7 @@ export function TeamCard(props) {
           neque!
         </p>
       ) : null} */}
-      {showMore && (
+      {!closed && (
         <p className="p text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
           eveniet, sequi consectetur doloribus dicta eos! Iste obcaecati alias
