@@ -1,0 +1,17 @@
+.pagination {
+  margin-top: 1em;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.pagination-btn {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.pagination-btn:hover {
+  color: white;
+}

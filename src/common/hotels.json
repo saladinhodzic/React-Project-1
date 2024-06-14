@@ -73,5 +73,41 @@
     "content": "near Madison Square Garden",
     "rating": "6/10",
     "total": 180
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://images.trvl-media.com/lodging/49000000/48670000/48669400/48669360/4b28c418.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "title": "Arlo Midtown",
+    "stars": 4,
+    "content": "near Madison Square Garden",
+    "rating": "6/10",
+    "total": 180
+  },
+  {
+    "id": 10,
+    "imageUrl": "https://images.trvl-media.com/lodging/49000000/48670000/48669400/48669360/4b28c418.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "title": "Arlo Midtown",
+    "stars": 4,
+    "content": "near Madison Square Garden",
+    "rating": "6/10",
+    "total": 180
+  },
+  {
+    "id": 11,
+    "imageUrl": "https://images.trvl-media.com/lodging/49000000/48670000/48669400/48669360/4b28c418.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "title": "Arlo Midtown",
+    "stars": 4,
+    "content": "near Madison Square Garden",
+    "rating": "6/10",
+    "total": 180
+  },
+  {
+    "id": 12,
+    "imageUrl": "https://images.trvl-media.com/lodging/49000000/48670000/48669400/48669360/4b28c418.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+    "title": "Arlo Midtown",
+    "stars": 4,
+    "content": "near Madison Square Garden",
+    "rating": "6/10",
+    "total": 180
   }
 ]
