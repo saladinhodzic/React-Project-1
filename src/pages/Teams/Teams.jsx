@@ -35,7 +35,7 @@ export default function Teams() {
           return (
             <TeamCard
               key={index}
-              id={teams.id}
+              id={value.id}
               name={value["team_name"]}
               points={`${value["points"]}pts`}
               wins={value.wins}
