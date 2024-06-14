@@ -41,7 +41,7 @@ export function Catalog() {
             brojHotelaPoStranici * page
           )}
       </div>
-      <Pagination brojStranica={brojStranica} setPage={setPage} />
+      <Pagination brojStranica={brojStranica} setPage={setPage} page={page} />
     </div>
   );
 }

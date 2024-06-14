@@ -1,13 +1,13 @@
 import "./Pagination.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-export function Pagination({ brojStranica, setPage }) {
+export function Pagination({ brojStranica, setPage, page }) {
   const niz = [];
   for (let i = 1; i <= brojStranica; i++) {
     niz.push(i);
   }
   return (
     <div className="pagination">
-      <button className="pagination-btn">
+      <button className="pagination-btn" onClick={() => setPage(page - 1)}>
         <MdKeyboardArrowLeft />
       </button>
       {niz.map((value, index) => {
@@ -22,7 +22,7 @@ export function Pagination({ brojStranica, setPage }) {
           </button>
         );
       })}
-      <button className="pagination-btn">
+      <button className="pagination-btn" onClick={() => setPage(page + 1)}>
         <MdKeyboardArrowRight />
       </button>
     </div>
