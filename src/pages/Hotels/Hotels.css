@@ -1,6 +1,6 @@
 .hotel-cards {
   width: 100%;
-  min-height: 100vh;
+  min-height: 30vh;
   background-color: aliceblue;
 }
 
@@ -9,7 +9,7 @@
   width: 90%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   justify-items: center;
   gap: 5em;
 }

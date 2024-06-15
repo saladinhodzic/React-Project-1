@@ -12,6 +12,7 @@ export function Catalog() {
   const brojHotela = hotels.length;
   const brojHotelaPoStranici = 8;
   const brojStranica = Math.ceil(brojHotela / brojHotelaPoStranici);
+
   return (
     <div className="hotels-cards">
       <NewNavbar />
