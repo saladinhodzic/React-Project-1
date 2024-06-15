@@ -1,3 +1,7 @@
+:sc {
+  scroll-behavior: "smooth";
+}
+
 .pagination {
   margin-top: 1em;
   height: 50px;
