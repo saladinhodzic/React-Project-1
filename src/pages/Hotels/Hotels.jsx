@@ -16,7 +16,14 @@ export function Catalog() {
   return (
     <div className="hotels-cards">
       <NewNavbar />
-      <div className="katalog">
+      <div
+        className="katalog"
+        style={
+          brojHotelaPoStranici > 8
+            ? { gridTemplateRows: "2fr" }
+            : { gridTemplateRows: "1fr" }
+        }
+      >
         {hotels
           .map((value) => {
             return (
