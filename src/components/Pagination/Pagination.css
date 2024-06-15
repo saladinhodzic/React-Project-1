@@ -21,3 +21,11 @@
 .pagination-btn:hover {
   color: white;
 }
+
+.isActive {
+  color: orange;
+}
+
+.notActive {
+  color: white;
+}

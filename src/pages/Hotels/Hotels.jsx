@@ -3,6 +3,8 @@ import { Card } from "../../components/Card/Card";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import { Pagination } from "../../components/Pagination/Pagination";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import "./Hotels.css";
 
 export function Catalog() {
