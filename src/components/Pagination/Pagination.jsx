@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import "./Pagination.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 export function Pagination({ brojStranica, setPage, page }) {

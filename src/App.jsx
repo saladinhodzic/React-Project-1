@@ -10,6 +10,7 @@ import { NewNavbar } from "./components/NewNavbar/NewNavbar";
 import { ShowHotel } from "./pages/ShowHotel/ShowHotel";
 import Home from "./pages/Home/Home";
 import Teams from "./pages/Teams/Teams";
+import { Quotes } from "./pages/Quotes/Quotes";
 import { MyList } from "./pages/MyList/MyList";
 
 // timer(50);
@@ -88,6 +89,7 @@ function App() {
             <Route path="/hotels/:id" element={<ShowHotel />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/list" element={<MyList />} />
+            <Route path="/quotes" element={<Quotes />} />
           </Routes>
         </div>
       </main>
