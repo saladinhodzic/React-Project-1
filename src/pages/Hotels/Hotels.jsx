@@ -2,7 +2,7 @@ import hotels from "../../common/hotels.json";
 import { Card } from "../../components/Card/Card";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import { Pagination } from "../../components/Pagination/Pagination";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./Hotels.css";
@@ -14,6 +14,13 @@ export function Catalog() {
   const brojHotela = hotels.length;
   const brojHotelaPoStranici = 8;
   const brojStranica = Math.ceil(brojHotela / brojHotelaPoStranici);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [page]);
 
   return (
     <div className="hotels-cards">

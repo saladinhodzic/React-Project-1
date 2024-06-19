@@ -7,13 +7,6 @@ export function Pagination({ brojStranica, setPage, page }) {
     niz.push(i);
   }
 
-  document.querySelectorAll(".pagination-btn").forEach((value) => {
-    value.addEventListener(
-      "click",
-      () => (window.onscroll = document.documentElement.scrollTop = 0)
-    );
-  });
-
   return (
     <div className="pagination">
       <button
@@ -21,6 +14,7 @@ export function Pagination({ brojStranica, setPage, page }) {
         onClick={() => {
           setPage(page - 1);
         }}
+        disabled={page === 1}
       >
         <MdKeyboardArrowLeft />
       </button>
@@ -43,6 +37,7 @@ export function Pagination({ brojStranica, setPage, page }) {
         onClick={() => {
           setPage(page + 1);
         }}
+        disabled={page === brojStranica}
       >
         <MdKeyboardArrowRight />
       </button>
