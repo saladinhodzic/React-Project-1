@@ -29,12 +29,12 @@ export default function Home(props) {
                 <li>Your list</li>
               </NavLink>
               <NavLink
-                to={"/apartmens"}
+                to={"/quotes"}
                 className={({ isActive }) =>
                   isActive ? "navlink-active" : "navlink"
                 }
               >
-                <li>Apartmens</li>
+                <li>Quotes</li>
               </NavLink>
               <NavLink
                 to={"/about-us"}
