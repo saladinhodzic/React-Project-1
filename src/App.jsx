@@ -10,7 +10,7 @@ import { NewNavbar } from "./components/NewNavbar/NewNavbar";
 import { ShowHotel } from "./pages/ShowHotel/ShowHotel";
 import Home from "./pages/Home/Home";
 import Teams from "./pages/Teams/Teams";
-import { Quotes } from "./pages/Quotes/Quotes";
+import Quotes from "./pages/Quotes/Quotes";
 import { MyList } from "./pages/MyList/MyList";
 
 // timer(50);
