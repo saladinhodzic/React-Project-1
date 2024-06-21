@@ -1,6 +1,5 @@
 import "./Quotes.css";
 import * as React from "react";
-
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -33,7 +32,7 @@ function Quotes() {
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
                   {value.author}
                 </Typography>
-                <Typography variant="body3">{value.content}</Typography>
+                <Typography variant="body3">*{value.content}</Typography>
                 <Typography sx={{ mb: 1.5 }}>{value.year}</Typography>
               </CardContent>
             </Card>
