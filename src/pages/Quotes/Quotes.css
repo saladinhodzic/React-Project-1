@@ -4,3 +4,9 @@
   gap: 1em;
   justify-items: center;
 }
+.quotes-is-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}

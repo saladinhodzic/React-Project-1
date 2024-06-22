@@ -24,7 +24,7 @@ function Quotes() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://api.quotable.io/quotes?limit=50&sortBy=author&order=asc"
+        "https://api.quotable.io/quotes?limit=16&page=1&sortBy=author&order=asc"
       );
       const result = await response.json();
       setQuotes(result.results);
@@ -41,9 +41,9 @@ function Quotes() {
   return (
     <>
       <NewNavbar />
-      <div className="quotes">
+      <div className={isLoading ? "quotes-is-loading" : "quotes"}>
         {isLoading ? (
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ display: "flex" }}>
             <CircularProgress />
           </Box>
         ) : (
