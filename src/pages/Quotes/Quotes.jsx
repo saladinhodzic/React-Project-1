@@ -4,19 +4,10 @@ import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { CircularProgress } from "@mui/material";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 function Quotes() {
-  // const [podaci, setPodaci] = useState([]);
-  // useEffect(() => {
-  //   fetch("https://api.quotable.io/quotes?page=1")
-  //     .then((url) => {
-  //       return url.json();
-  //     })
-  //     .then((data) => {
-  //       setPodaci(data.results);
-  //     });
-  // }, []);
-  // console.log(podaci);
   const [quotes, setQuotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -57,6 +48,9 @@ function Quotes() {
             );
           })
         )}
+        <Stack spacing={2}>
+          <Pagination count={10} size="small" color="primary" />
+        </Stack>
       </div>
     </>
   );
