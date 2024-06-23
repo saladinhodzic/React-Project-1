@@ -11,6 +11,7 @@ function Quotes() {
   const [quotes, setQuotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [count, setCount] = useState(null);
 
   async function getQuotes() {
     setIsLoading(true);
@@ -19,6 +20,7 @@ function Quotes() {
         `https://api.quotable.io/quotes?limit=16&page=${page}&sortBy=author&order=asc`
       );
       const result = await response.json();
+      setCount(result.totalPages);
       setQuotes(result.results);
       console.log(result);
     } catch (error) {
@@ -59,7 +61,7 @@ function Quotes() {
           }}
         >
           <Pagination
-            count={1}
+            count={count}
             style={{ backgroundColor: "#fff", borderRadius: "1em" }}
             color="primary"
           />
