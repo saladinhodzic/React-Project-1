@@ -1,17 +1,21 @@
 import "./Quotes.css";
+import * as React from "react";
 import { QuoteCard } from "../../components/QuoteCard/QuoteCard";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { CircularProgress } from "@mui/material";
-import Stack from "@mui/material/Stack";
 import { Pagination } from "@mui/material";
 
 function Quotes() {
   const [quotes, setQuotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = React.useState(1);
   const [count, setCount] = useState(null);
+
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
 
   async function getQuotes() {
     setIsLoading(true);
@@ -31,7 +35,7 @@ function Quotes() {
   }
   useEffect(() => {
     getQuotes();
-  }, []);
+  }, [page]);
 
   return (
     <>
@@ -42,9 +46,10 @@ function Quotes() {
             <CircularProgress />
           </Box>
         ) : (
-          quotes.map((value) => {
+          quotes.map((value, index) => {
             return (
               <QuoteCard
+                key={index}
                 author={value.author}
                 content={value.content}
                 tags={value.tags[0]}
@@ -64,6 +69,8 @@ function Quotes() {
             count={count}
             style={{ backgroundColor: "#fff", borderRadius: "1em" }}
             color="primary"
+            page={page}
+            onChange={handleChange}
           />
         </Box>
       )}
