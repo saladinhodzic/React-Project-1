@@ -10,7 +10,7 @@ import { Pagination } from "@mui/material";
 function Quotes() {
   const [quotes, setQuotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = React.useState(1);
+  const [page, setPage] = useState(1);
   const [count, setCount] = useState(null);
 
   const handleChange = (event, value) => {
@@ -35,6 +35,10 @@ function Quotes() {
   }
   useEffect(() => {
     getQuotes();
+    window.scrollTo({
+      top: 0,
+      scroll: "behaviour",
+    });
   }, [page]);
 
   return (
