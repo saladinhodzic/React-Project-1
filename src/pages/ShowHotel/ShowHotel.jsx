@@ -68,17 +68,23 @@ export function ShowHotel() {
             </ul>
             <div style={{ display: "flex", alignItems: "center", gap: "1em" }}>
               <button>Reserve</button>
-              {!isActive ? (
-                <CiHeart
-                  className="heart"
-                  onClick={() => setIsActive(!isActive)}
-                />
-              ) : (
-                <FaHeart
-                  className="heart"
-                  onClick={() => setIsActive(!isActive)}
-                />
-              )}
+              <button
+                onClick={() => {
+                  localStorage.setItem("key", `dobar je ovaj ${id}. hotel`);
+                }}
+              >
+                {!isActive ? (
+                  <CiHeart
+                    className="heart"
+                    onClick={() => setIsActive(!isActive)}
+                  />
+                ) : (
+                  <FaHeart
+                    className="heart"
+                    onClick={() => setIsActive(!isActive)}
+                  />
+                )}
+              </button>
             </div>
           </div>
         </div>
