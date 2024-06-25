@@ -71,18 +71,13 @@ export function ShowHotel() {
               <button
                 onClick={() => {
                   localStorage.setItem("key", `dobar je ovaj ${id}. hotel`);
+                  setIsActive(!isActive);
                 }}
               >
                 {!isActive ? (
-                  <CiHeart
-                    className="heart"
-                    onClick={() => setIsActive(!isActive)}
-                  />
+                  <CiHeart className="heart" />
                 ) : (
-                  <FaHeart
-                    className="heart"
-                    onClick={() => setIsActive(!isActive)}
-                  />
+                  <FaHeart className="heart" />
                 )}
               </button>
             </div>
