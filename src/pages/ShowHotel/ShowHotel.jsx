@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hotels from "../../common/hotels.json";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import {
@@ -16,11 +16,25 @@ export const niz = [];
 
 export function ShowHotel() {
   const { id } = useParams();
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(() => {
+    const state = localStorage.getItem(`${id}`);
+    const parse = JSON.parse(state);
+    return parse || null;
+  });
 
   // const hotel = Hotels.at(+id - 1);
   const hotel = Hotels.find((hotel) => hotel.id === Number(id));
   niz.push(hotel);
+
+  // useEffect(() => {
+  //   const state = localStorage.getItem(`${id}`);
+  //   if (state !== null) setIsActive(JSON.parse(state));
+
+  // }, []);
+
+  useEffect(() => {
+    localStorage.setItem(`${id}`, JSON.stringify(isActive));
+  }, [isActive]);
 
   return (
     <>
@@ -70,7 +84,6 @@ export function ShowHotel() {
               <button>Reserve</button>
               <button
                 onClick={() => {
-                  localStorage.setItem("key", `dobar je ovaj ${id}. hotel`);
                   setIsActive(!isActive);
                 }}
               >
