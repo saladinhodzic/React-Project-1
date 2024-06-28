@@ -16,6 +16,11 @@ export const niz = [];
 
 export function ShowHotel() {
   const { id } = useParams();
+  const [isActive, setIsActive] = useState(() => {
+    const state = localStorage.getItem(`${id}`);
+    const parse = JSON.parse(state);
+    return parse || null;
+  });
 
   // const hotel = Hotels.at(+id - 1);
   const hotel = Hotels.find((hotel) => hotel.id === Number(id));

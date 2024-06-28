@@ -12,6 +12,7 @@ import Home from "./pages/Home/Home";
 import Teams from "./pages/Teams/Teams";
 import Quotes from "./pages/Quotes/Quotes";
 import { MyList } from "./pages/MyList/MyList";
+import { Auth } from "./pages/Auth/Auth";
 
 // timer(50);
 // console.log(timer(time));
@@ -84,6 +85,7 @@ function App() {
         </div> */}
         <div className="hotels">
           <Routes>
+            <Route path="/auth" element={<Auth />} />
             <Route path="/" element={<Home />} />
             <Route path="/hotels" element={<Catalog />} />
             <Route path="/hotels/:id" element={<ShowHotel />} />
