@@ -16,7 +16,15 @@ export function Auth() {
 
   return (
     <>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box
+        sx={{
+          borderBottom: 1,
+          borderColor: "divider",
+          backgroundColor: "white",
+          width: "50%",
+          minHeight: "200px",
+        }}
+      >
         <Tabs value={value} onChange={handleClick} centered>
           <Tab label="Sign up" />
           <Tab label="Login" />
