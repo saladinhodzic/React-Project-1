@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import { SignUp } from "../../components/Signup/Signup";
 import { LogIn } from "../../components/Login/Login";
 import { useState } from "react";
+import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 
 export function Auth() {
   const [signUp, login] = useState(true);
@@ -15,22 +16,25 @@ export function Auth() {
   }
 
   return (
-    <>
-      <Box
-        sx={{
-          borderBottom: 1,
-          borderColor: "divider",
-          backgroundColor: "white",
-          width: "50%",
-          minHeight: "200px",
-        }}
-      >
-        <Tabs value={value} onChange={handleClick} centered>
-          <Tab label="Sign up" />
-          <Tab label="Login" />
-        </Tabs>
-        {signUp ? <SignUp /> : <LogIn />}
-      </Box>
-    </>
+    <div className="wrapper">
+      <NewNavbar />
+      <div className="auth">
+        <Box
+          sx={{
+            borderBottom: 1,
+            borderColor: "divider",
+            backgroundColor: "white",
+            width: "30%",
+            minHeight: "200px",
+          }}
+        >
+          <Tabs value={value} onChange={handleClick} centered>
+            <Tab label="Sign up" />
+            <Tab label="Login" />
+          </Tabs>
+          {signUp ? <SignUp /> : <LogIn />}
+        </Box>
+      </div>
+    </div>
   );
 }

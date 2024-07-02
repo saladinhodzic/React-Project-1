@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export function Navbar(props) {
   return (
     <header>
-      <div className="wrapper">
+      <div className="navbar">
         <div className="logo">
           <NavLink to={""} className={"navlink"}>
             <h1>SAKIley</h1>
@@ -47,13 +47,10 @@ export function Navbar(props) {
           </ul>
           <button>Log in</button>
         </div>
-
-        {props.show ? (
-          <div className="slogan">
-            <h1>Find your next stay</h1>
-            <h2>Search lowest prices on hotels, motels and so much more...</h2>
-          </div>
-        ) : null}
+      </div>
+      <div className="slogan">
+        <h1>Find your next stay</h1>
+        <h2>Search lowest prices on hotels, motels and so much more...</h2>
       </div>
     </header>
   );
