@@ -22,24 +22,10 @@ export function LogIn() {
     }),
   });
   return (
-    <form className="form" onSubmit={formik.onSubmit}>
-      <div className="name">
-        <input
-          id="name"
-          name="name"
-          type="name"
-          value={formik.values.name}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          placeholder="Enter your name"
-        />
-      </div>
-      {formik.touched.name && formik.errors.name ? (
-        <div className="warning">
-          <p className="error-text">{formik.errors.name}</p>
-        </div>
-      ) : null}
+    <form className="form login" onSubmit={formik.onSubmit}>
       <div className="email">
+        <p className="credentials">Email:</p>
+
         <input
           id="email"
           name="email"
@@ -48,6 +34,9 @@ export function LogIn() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           placeholder="Email:"
+          className={
+            formik.touched.email && formik.errors.email ? "error" : null
+          }
         />
       </div>
       {formik.touched.email && formik.errors.email ? (
@@ -56,6 +45,8 @@ export function LogIn() {
         </div>
       ) : null}
       <div className="password">
+        <p className="credentials">Password:</p>
+
         <input
           id="password"
           name="password"
@@ -64,6 +55,9 @@ export function LogIn() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           placeholder="Enter your password"
+          className={
+            formik.touched.password && formik.errors.password ? "error" : null
+          }
         />
       </div>
       {formik.touched.password && formik.errors.password ? (
