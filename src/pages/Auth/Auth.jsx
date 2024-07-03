@@ -2,17 +2,18 @@ import "./Auth.css";
 import { SignUp } from "../../components/Signup/Signup";
 import { LogIn } from "../../components/Login/Login";
 import { useState } from "react";
-import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Tabs from "@mui/material/Tabs";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 import Tab from "@mui/material/Tab";
 
 export function Auth() {
-  const [login, signup] = useState(0);
+  const [tab, setTab] = useState("login");
 
   const handleChange = (e, value) => {
-    signup(!value);
+    setTab(value);
   };
   const formik = useFormik({
     initialValues: {
@@ -28,15 +29,34 @@ export function Auth() {
         .max(15, "Must be 15 characters or less")
         .required("Please enter your name"),
       email: Yup.string().email("Invalid email adress").required("Required"),
+      password: Yup.string()
+        .required("No password provided.")
+        .min(8, "Password is too short - should be 8 chars minimum.")
+        .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
     }),
   });
   return (
     <div className="wrapper">
       <form className="form" onSubmit={formik.onSubmit}>
-        <Tabs value={login} onChange={handleChange}>
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
-        </Tabs>
+        <TabContext value={tab}>
+          <TabList
+            onChange={handleChange}
+            sx={{
+              ".MuiTab-root": {
+                color: `white`,
+              },
+            }}
+          >
+            <Tab label="login" value="login" color="primary" />
+            <Tab label="register" value="register" />
+          </TabList>
+          <TabPanel value="login">
+            <LogIn />
+          </TabPanel>
+          <TabPanel value="register">
+            <SignUp setTabName={setTab} />
+          </TabPanel>
+        </TabContext>
         <div className="name">
           <input
             id="name"
@@ -67,6 +87,22 @@ export function Auth() {
         {formik.touched.email && formik.errors.email ? (
           <div className="warning">
             <p className="error-text">{formik.errors.email}</p>
+          </div>
+        ) : null}
+        <div className="password">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            placeholder="Enter your password"
+          />
+        </div>
+        {formik.touched.password && formik.errors.password ? (
+          <div className="warning">
+            <p className="error-text">{formik.errors.password}</p>
           </div>
         ) : null}
 
