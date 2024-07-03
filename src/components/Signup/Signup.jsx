@@ -27,7 +27,7 @@ export function SignUp() {
     }),
   });
   return (
-    <form className="form register" onSubmit={formik.onSubmit}>
+    <form className="login" onSubmit={formik.onSubmit}>
       <div className="name">
         <p className="credentials">Name:</p>
 

@@ -18,25 +18,27 @@ export function Auth() {
 
   return (
     <div className="wrapper">
-      <TabContext value={tab}>
-        <TabList
-          onChange={handleChange}
-          sx={{
-            ".MuiTab-root": {
-              color: `white`,
-            },
-          }}
-        >
-          <Tab label="login" value="login" color="primary" />
-          <Tab label="register" value="register" />
-        </TabList>
-        <TabPanel value="login">
-          <LogIn />
-        </TabPanel>
-        <TabPanel value="register">
-          <SignUp setTabName={setTab} />
-        </TabPanel>
-      </TabContext>
+      <div className="form">
+        <TabContext value={tab}>
+          <TabList
+            onChange={handleChange}
+            sx={{
+              ".MuiTab-root": {
+                color: `white`,
+              },
+            }}
+          >
+            <Tab label="login" value="login" color="primary" />
+            <Tab label="register" value="register" />
+          </TabList>
+          <TabPanel value="login">
+            <LogIn />
+          </TabPanel>
+          <TabPanel value="register">
+            <SignUp setTabName={setTab} />
+          </TabPanel>
+        </TabContext>
+      </div>
     </div>
   );
 }

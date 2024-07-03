@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import "./Login.css";
 export function LogIn() {
   const formik = useFormik({
     initialValues: {
@@ -22,7 +23,7 @@ export function LogIn() {
     }),
   });
   return (
-    <form className="form login" onSubmit={formik.onSubmit}>
+    <form className=" login" onSubmit={formik.onSubmit}>
       <div className="email">
         <p className="credentials">Email:</p>
 

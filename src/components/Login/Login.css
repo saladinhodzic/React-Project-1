@@ -1,0 +1,9 @@
+.login input {
+  width: 80%;
+  height: 40px;
+  padding: 0 1em;
+  border-radius: 0.5em;
+  outline: none;
+  transition: all 200ms ease-in;
+  margin-bottom: 1em;
+}
