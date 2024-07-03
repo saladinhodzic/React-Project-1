@@ -1,7 +1,12 @@
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export function Navbar(props) {
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("user");
+    navigate("/auth");
+  };
   return (
     <header>
       <div className="navbar">
@@ -46,7 +51,7 @@ export function Navbar(props) {
             </NavLink>
           </ul>
           <NavLink to={"/auth"}>
-            <button>Log in</button>
+            <button onClick={logout}>Logout</button>
           </NavLink>
         </div>
       </div>

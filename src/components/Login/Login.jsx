@@ -4,17 +4,14 @@ import "./Login.css";
 export function LogIn() {
   const formik = useFormik({
     initialValues: {
-      name: "",
       email: "",
       password: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      localStorage.setItem("user", JSON.stringify(values));
+      alert("user saved");
     },
     validationSchema: Yup.object({
-      name: Yup.string()
-        .max(15, "Must be 15 characters or less")
-        .required("Please enter your name"),
       email: Yup.string().email("Invalid email adress").required("Required"),
       password: Yup.string()
         .required("No password provided.")
@@ -23,7 +20,7 @@ export function LogIn() {
     }),
   });
   return (
-    <form className=" login" onSubmit={formik.onSubmit}>
+    <form className=" login" onSubmit={formik.handleSubmit}>
       <div className="email">
         <p className="credentials">Email:</p>
 

@@ -1,7 +1,9 @@
 import "./Signup.css";
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 export function SignUp() {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -9,8 +11,10 @@ export function SignUp() {
       email: "",
       password: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: (values, { resetForm }) => {
+      localStorage.setItem("user", JSON.stringify(values));
+      resetForm();
+      navigate("/");
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -27,7 +31,7 @@ export function SignUp() {
     }),
   });
   return (
-    <form className="login" onSubmit={formik.onSubmit}>
+    <form className="login" onSubmit={formik.handleSubmit}>
       <div className="name">
         <p className="credentials">Name:</p>
 
