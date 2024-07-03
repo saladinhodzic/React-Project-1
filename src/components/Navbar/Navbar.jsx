@@ -45,7 +45,9 @@ export function Navbar(props) {
               <li>About us</li>
             </NavLink>
           </ul>
-          <button>Log in</button>
+          <NavLink to={"/auth"}>
+            <button>Log in</button>
+          </NavLink>
         </div>
       </div>
       <div className="slogan">
