@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import hotel from "./assets/hotel.jpg";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Naslov } from "./components/Naslov/Naslov";
 import { Footer } from "./components/Footer/Footer";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { Catalog } from "./pages/Hotels/Hotels";
 import { NewNavbar } from "./components/NewNavbar/NewNavbar";
 import { ShowHotel } from "./pages/ShowHotel/ShowHotel";
@@ -13,6 +13,7 @@ import Teams from "./pages/Teams/Teams";
 import Quotes from "./pages/Quotes/Quotes";
 import { MyList } from "./pages/MyList/MyList";
 import { Auth } from "./pages/Auth/Auth";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 // timer(50);
 // console.log(timer(time));
@@ -25,6 +26,8 @@ import { Auth } from "./pages/Auth/Auth";
 //   }, 1000);
 // };
 function App() {
+  const user = localStorage.getItem("user");
+  const navigate = useNavigate();
   // const [count, setCount] = useState(0);
   // const [arr, setArr] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   // const [seconds, setTimer] = useState(60);
@@ -46,7 +49,9 @@ function App() {
   // console.log(name);
 
   // setCount((prevValue) => prevValue++); NIJE KOREKTNO
-
+  useEffect(() => {
+    navigate("/auth");
+  }, []);
   return (
     <>
       <main className="main">
@@ -85,13 +90,55 @@ function App() {
         </div> */}
         <div className="hotels">
           <Routes>
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/hotels" element={<Catalog />} />
-            <Route path="/hotels/:id" element={<ShowHotel />} />
-            <Route path="/teams" element={<Teams />} />
-            <Route path="/list" element={<MyList />} />
-            <Route path="/quotes" element={<Quotes />} />
+            {!user ? <Route path="/auth" element={<Auth />} /> : navigate("/")}
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/hotels"
+              element={
+                <ProtectedRoute>
+                  <Catalog />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/hotels/:id"
+              element={
+                <ProtectedRoute>
+                  <ShowHotel />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/teams"
+              element={
+                <ProtectedRoute>
+                  <Teams />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/list"
+              element={
+                <ProtectedRoute>
+                  <MyList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/quotes"
+              element={
+                <ProtectedRoute>
+                  <Quotes />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </div>
       </main>
