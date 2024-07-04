@@ -90,7 +90,7 @@ function App() {
         </div> */}
         <div className="hotels">
           <Routes>
-            {!user ? <Route path="/auth" element={<Auth />} /> : navigate("/")}
+            <Route path="/auth" element={!user ? <Auth /> : navigate("/")} />
             <Route
               path="/"
               element={
