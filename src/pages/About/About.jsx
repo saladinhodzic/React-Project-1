@@ -1,6 +1,4 @@
 import "./About.css";
-import saki from "../../assets/saki.png";
-import dzenan from "../../assets/dzenan.png";
 import about from "../../common/about-us.json";
 import { NewNavbar } from "../../components/NewNavbar/NewNavbar";
 import { Footer } from "../../components/Footer/Footer";
