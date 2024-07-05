@@ -32,6 +32,7 @@
   width: 70%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 4em;
 }
 
 .person {
@@ -45,14 +46,19 @@
   position: relative;
 }
 
+.person:hover > .profilna {
+  filter: blur(2px);
+}
+
 .person:hover > .person-name {
   transform: translateY(-200px);
 }
 
 .description {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   position: absolute;
+  justify-content: space-around;
   text-align: left;
   bottom: -200px;
   left: 0;
@@ -74,6 +80,7 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   object-fit: cover;
+  transition: filter 200ms ease-in;
 }
 
 .person-name {
@@ -88,4 +95,21 @@
   background-color: #1a1a1a;
   transition: all 200ms ease-in;
   font-size: 1.2em;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  font-size: 3em;
+}
+
+.link {
+  color: #83838a;
+  transition: all 200ms ease-in;
+}
+
+.link:hover {
+  color: #fff;
+  cursor: pointer;
 }
