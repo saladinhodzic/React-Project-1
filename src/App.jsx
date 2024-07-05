@@ -14,6 +14,8 @@ import Quotes from "./pages/Quotes/Quotes";
 import { MyList } from "./pages/MyList/MyList";
 import { Auth } from "./pages/Auth/Auth";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import { About } from "./pages/About/About";
+import { Error } from "./pages/Error/Error";
 
 // timer(50);
 // console.log(timer(time));
@@ -50,8 +52,10 @@ function App() {
 
   // setCount((prevValue) => prevValue++); NIJE KOREKTNO
   useEffect(() => {
-    navigate("/auth");
-  }, []);
+    if (!user) {
+      navigate("/auth");
+    }
+  }, [user, navigate]);
   return (
     <>
       <main className="main">
@@ -90,7 +94,7 @@ function App() {
         </div> */}
         <div className="hotels">
           <Routes>
-            <Route path="/auth" element={!user ? <Auth /> : navigate("/")} />
+            <Route path="/auth" element={<Auth />} />
             <Route
               path="/"
               element={
@@ -139,6 +143,15 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route
+              path="/about-us"
+              element={
+                <ProtectedRoute>
+                  <About />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="*" element={<Error />} />
           </Routes>
         </div>
       </main>
